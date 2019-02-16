@@ -5,7 +5,7 @@ counter = 0
 
 n = 4
 magicTable = [[0] * n for i in range(n)]
-magicTable[0][0] = ' '
+magicTable[0][0] = '*'
 magicTable[0][1] = 1
 magicTable[0][2] = 2
 magicTable[0][3] = 3
@@ -19,15 +19,16 @@ for x in range(1,4):
 
 def printTable():
     for posx in range(4):
+        line = ''
         for posy in range(4):
-            print(magicTable[posx][posy]),
-        print('\n')
+            line = line + str(magicTable[posx][posy])
+        print(line)
 
 def getCoords():
     global User
     global counter
     if User == True:
-        coords = raw_input('Give the cordinates of the box u want to play (eg. A 3)')
+        coords = input('Give the cordinates of the box u want to play (eg. A 3)')
     else:
         for posx in range(1,4):
             for posy in range(1,4):
@@ -112,9 +113,9 @@ while (not playerWon) and counter < 9 :
     printTable()
     getCoords()
     if checkGameStatus() == 1:
-        print 'User won'
+        print('User won')
         counter = 10
     elif checkGameStatus() == 2:
-        print 'AI won'
+        print('AI won')
         counter = 10
 printTable()
