@@ -1,4 +1,6 @@
 # Python-Exercise
+
+##Description
 Those are some exercises from my semester in the university 
 
 ##Information about the university 
